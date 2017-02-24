@@ -5,6 +5,12 @@ const stylus = require('gulp-stylus');
 const browserSync = require('browser-sync').create();
 
 
+gulp.task('js', function() {
+  return gulp.src('src/js/script.js')
+    .pipe(gulp.dest('build/'));
+});
+
+
 gulp.task('style', function() {
   return gulp.src('src/stylus/style.styl')
     .pipe(stylus())
@@ -24,7 +30,8 @@ gulp.task('server', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/stylus/**/*.styl', gulp.series('style'));
+  gulp.watch('src/js/**/*.js', gulp.series('js'));
 });
 
 
-gulp.task('default', gulp.series('style', gulp.parallel('watch','server')));
+gulp.task('default', gulp.series('style', 'js', gulp.parallel('watch','server')));
