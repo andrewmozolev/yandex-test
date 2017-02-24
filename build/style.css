@@ -42,7 +42,12 @@ body.active {
 }
 .content {
   flex: 1 0 calc(100% - 300px);
+  padding: 15px;
+  font-size: 20px;
   transition: all 0.25s ease-out;
+}
+.content.wide {
+  flex: 1 0 100%;
 }
 .sidebar {
   flex: 0 0 300px;
@@ -52,6 +57,12 @@ body.active {
   opacity: 1;
   visibility: visible;
   transition: all 0.25s ease-out;
+}
+.sidebar.hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  width: 0;
 }
 .page-footer {
   position: fixed;

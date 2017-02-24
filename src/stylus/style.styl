@@ -46,7 +46,12 @@ body
 
 .content
   flex 1 0 calc(100% - 300px)
+  padding 15px
+  font-size 20px
   transition all 0.25s ease-out
+
+  &.wide
+    flex 1 0 100%
 
 
 .sidebar
@@ -57,6 +62,12 @@ body
   opacity 1
   visibility visible
   transition all 0.25s ease-out
+
+  &.hidden
+    opacity 0
+    visibility hidden
+    height 0
+    width 0
 
 
 .page-footer

@@ -1,4 +1,5 @@
 (function() {
+  /* additional-task-1 */
   var loginBtn = document.querySelector('#btn-login');
   var loginPopupClose = document.querySelector('#btn-login-close');
   var loginPopup = document.querySelector('#popup-login');
@@ -52,4 +53,23 @@
       window.ontouchmove = null;
       document.onkeydown = null;
   }
+
+
+  /* additional-task-2 */
+
+  var pageHeight = document.body.scrollHeight;
+  var sidebar = document.querySelector('.sidebar');
+  var sidebarContent = document.querySelector('#sidebar-content');
+  var content = document.querySelector('.content');
+
+  document.addEventListener('scroll', function(evt) {
+    var sidebarPosition = sidebarContent.getBoundingClientRect();
+    if (sidebarPosition.bottom + 10 <= 0) {
+      sidebar.classList.add('hidden');
+      content.classList.add('wide');
+    } else {
+      sidebar.classList.remove('hidden');
+      content.classList.remove('wide');
+    }
+  });
 })();
